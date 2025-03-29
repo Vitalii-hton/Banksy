@@ -49,3 +49,8 @@
         </a-scene>
     </body>
 </html>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
