@@ -27,13 +27,14 @@
             </a-assets>
 
             <a-marker
-                id="animated-marker"
+                 id="animated-marker"
     type="nft"
     url="https://Vitalii-hton.github.io/Banksy/assets/markers/Untitled-2"
-    raycaster="objects: .clickable"
     emitevents="true"
-    cursor="fuse: false; rayOrigin: mouse;"
-    id="markerA">
+    smooth="true"
+    smoothCount="10"
+    smoothTolerance=".01"
+    smoothThreshold="5">
             >
                 <a-entity
                     id="bowser-model"
