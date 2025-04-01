@@ -14,9 +14,7 @@
             loading-screen="enabled: false;"
             renderer="logarithmicDepthBuffer: true; antialias: true; highRefreshRate: true; precision: high;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            shadow="receive: true"
-            background="color: #000000"
-            environment="preset: default; lighting: none"
+            shadow="receive: true"                        
             id="scene"
             embedded
             gesture-detector
@@ -28,6 +26,7 @@
                 ></a-asset-item>
             </a-assets>
                 <a-entity light="type: directional; intensity: 3.2; castShadow: true" position="3 10 5"></a-entity>
+            <a-entity light="type: ambient; intensity: 1"></a-entity>
 
             <a-marker
                 id="animated-marker"
