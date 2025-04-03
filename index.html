@@ -1,65 +1,21 @@
-<!doctype html>
 <html>
-    <head>
-        <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: https://raw.githubusercontent.com/Vitalii-hton/Banksy1/main/assets/cetank.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>	
+	<a-asset-item id="avatarModel" src="https://raw.githubusercontent.com/Vitalii-hton/Banksy1/main/assets/tank4.glb"></a-asset-item>
+      </a-assets>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene            
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true; antialias: true; highRefreshRate: true; precision: high;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            shadow="receive: true"                        
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="https://raw.githubusercontent.com/Vitalii-hton/Banksy/main/assets/tank4.glb"
-                ></a-asset-item>
-            </a-assets>                
-            <a-entity light="type: ambient; intensity: 1"></a-entity>
-            <a-entity light="type: directional; color: #00aaff; intensity: 2; castShadow: true;" position="0 2 -5"></a-entity>            
-            <a-entity light="type: spot; color: #88aaff; intensity: 3; angle: 80; penumbra: 1"
-              position="-3 -5 5" rotation="0 0 0"></a-entity>
-            <a-entity light="type: spot; color: #88aaff; intensity: 3; angle: 120; penumbra: 1"
-              position="3 10 5" rotation="0 0 0"></a-entity>
-            
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="https://Vitalii-hton.github.io/Banksy/assets/pattern-frame.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                           >
-                <a-entity
-                    id="bowser-model"
-                    position="0 0 0"
-                    scale="0.1 0.1 0.1"
-                    rotation="0 -90 90"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    material="metalness: 0.8; roughness: 0.2; emissive: #222"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
-
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+        <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel">
+      </a-entity>
+    </a-scene>
+  </body>
 </html>
